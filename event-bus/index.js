@@ -15,19 +15,18 @@ app.post("/events", (req, res) => {
 
   events.push(event);
 
-  axios.post("http://localhost:8080/events", event).catch((err) => {
+  axios.post("http://posts-srv:8080/events", event).catch((err) => {
     console.log(err.message);
   });
-  axios.post("http://localhost:8081/events", event).catch((err) => {
+  axios.post("http://comments-srv:8081/events", event).catch((err) => {
     console.log(err.message);
   });
-  axios.post("http://localhost:8082/events", event).catch((err) => {
+  axios.post("http://query-srv:8082/events", event).catch((err) => {
     console.log(err.message);
   });
-  axios.post("http://localhost:8083/events", event).catch((err) => {
+  axios.post("http://moderation-srv:8083/events", event).catch((err) => {
     console.log(err.message);
   });
-
   res.send({ status: "OK" });
 });
 

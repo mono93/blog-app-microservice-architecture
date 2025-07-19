@@ -17,7 +17,7 @@ app.post("/events", async (req, res) => {
     // Simulate a delay for moderation
     await new Promise(resolve => setTimeout(resolve, 6000));
     
-    await axios.post("http://localhost:8085/events", {
+    await axios.post("http://event-bus-srv:8085/events", {
       type: "CommentModerated",
       data: {
         id: data.id,

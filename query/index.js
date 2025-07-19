@@ -54,7 +54,7 @@ app.post("/events", (req, res) => {
 app.listen(8082, async () => {
   console.log("Listening on 8082");
   try {
-    const res = await axios.get("http://localhost:8085/events");
+    const res = await axios.get("http://event-bus-srv:8085/events");
 
     for (let event of res.data) {
       console.log("Processing event:", event.type);
