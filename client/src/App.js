@@ -4,7 +4,7 @@ import PostList from "./PostList";
 const App = () => {
   
   return (
-    <div className="container">
+    <div className="container" style={{ marginTop: "25px" }}>
       <h1>Create Post</h1>
       <PostCreate />
       <hr />
